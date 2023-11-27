@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionario</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #001f3f;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        h3 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #70a1d2;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Questionario Curso de Fotografía</h1>
+
+<form id="quizForm">
+    <h3>Pregunta 1: ¿Qué filtro se utiliza para eliminar los reflejos de superficies metálicas y no metálicas?</h3>
+    <ul>
+        <li><input type="radio" name="q1" value="o1"> Filtro ultra violeta.</li>
+        <li><input type="radio" name="q1" value="o2"> Filtro polarizador.</li>
+        <li><input type="radio" name="q1" value="o3"> Filtro de densidad neutra.</li>
+        <li><input type="radio" name="q1" value="o4"> Filtro azul.</li>
+    </ul>
+
+    <h3>Pregunta 2: ¿Cual es la distancia focal clásica para tomar un retrato?</h3>
+    <ul>
+        <li><input type="radio" name="q2" value="o1"> 60 mm.</li>
+        <li><input type="radio" name="q2" value="o2"> 200 mm.</li>
+        <li><input type="radio" name="q2" value="o3"> 50 mm.</li>
+        <li><input type="radio" name="q2" value="o4"> 85 mm.</li>
+    </ul>
+
+    <h3>Pregunta 3: ¿El objetivo de la cámara es?</h3>
+    <ul>
+        <li><input type="radio" name="q3" value="o1"> Regular la intensidad de la luz.</li>
+        <li><input type="radio" name="q3" value="o2"> Crear una imagen óptica hacia un medio fotosensible.</li>
+        <li><input type="radio" name="q3" value="o3"> Abrir el obturador por más tiempo.</li>
+        <li><input type="radio" name="q3" value="o4"> Proteger las partes sensibles del sensor.</li>
+    </ul>
+
+    <h3>Pregunta 4: ¿Cuales son los modos de selección de zona de enfoque?</h3>
+    <ul>
+        <li><input type="radio" name="q4" value="o1"> Manual y automático.</li>
+        <li><input type="radio" name="q4" value="o2"> Retrato y paisaje.</li>
+        <li><input type="radio" name="q4" value="o3"> Manual, sencillo y continuo.</li>
+        <li><input type="radio" name="q4" value="o4"> Automático, centrado y punto único.</li>
+    </ul>
+
+    <h3>Pregunta 5: ¿Cuales son las principales fuentes de luz para fotografía?</h3>
+    <ul>
+        <li><input type="radio" name="q5" value="o1"> Artificial o natural.</li>
+        <li><input type="radio" name="q5" value="o2"> Día o noche.</li>
+        <li><input type="radio" name="q5" value="o3"> Flash o lampara.</li>
+        <li><input type="radio" name="q5" value="o4"> Brillante u opaca.</li>
+    </ul>
+
+    <br>
+    <button type="button" onclick="calculateScore()">Calcular Puntaje</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+    function calculateScore() {
+        var correctAnswers = {
+            q1: "o2",
+            q2: "o3",
+            q3: "o2",
+            q4: "o4",
+            q5: "o1"
+        };
+
+        var score = 0;
+
+        for (var i = 1; i <= 5; i++) {
+            var questionName = "q" + i;
+            var selectedAnswer = document.querySelector('input[name="' + questionName + '"]:checked');
+            if (selectedAnswer && selectedAnswer.value === correctAnswers[questionName]) {
+                score++;
+            }
+        }
+        var resultElement = document.getElementById("result");
+        resultElement.innerHTML = "Tu puntaje es: " + score + " / 5";
+    }
+</script>
+
+</body>
+</html>
+
+
+

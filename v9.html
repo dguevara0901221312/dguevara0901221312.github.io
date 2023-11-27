@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 09</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #001f3f; 
+            color: white; 
+        }
+
+        #videoTitle {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #youtubePlayer {
+            text-align: center;
+        }
+
+        #videoLink {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        #customImage {
+            margin-top: 20px;
+            max-width: 10%; 
+        }
+    </style>
+</head>
+<body>
+    <div id="videoTitle">Clase 09</div>
+    <div id="youtubePlayer"></div>
+    <div id="videoLink"><a href="https://www.youtube.com/watch?v=NCLyPloH21A&list=PLGt86abJsziCMnrgOm3YL9K5lCTmNeLwE&index=9&ab_channel=GuillermoFlores-CursosdeFotograf%C3%ADa" target="_blank">Enlace al video</a></div>
+    <img id="customImage" src="E.png" alt="Descripción de la imagen">
+
+    <script>
+
+        function insertarReproductor(videoId) {
+            var playerDiv = document.getElementById('youtubePlayer');
+            var iframe = document.createElement('iframe');
+            iframe.width = "800";  
+            iframe.height = "450"; 
+            iframe.src = "https://www.youtube.com/embed/" + videoId;
+            iframe.frameBorder = 0;
+            iframe.allowFullscreen = true;
+            playerDiv.appendChild(iframe);
+        }
+
+        var videoId = "https://www.youtube.com/watch?v=NCLyPloH21A&list=PLGt86abJsziCMnrgOm3YL9K5lCTmNeLwE&index=9&ab_channel=GuillermoFlores-CursosdeFotograf%C3%ADa";
+        insertarReproductor(videoId);
+    </script>
+
+</body>
+</html>
+
+
+

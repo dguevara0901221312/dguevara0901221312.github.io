@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+        body {
+            background-color: #001f3f;
+            text-align: center;
+            margin: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        #imagenContainer {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #imagenPequena {
+            max-width: 100px; 
+        }
+
+        #miImagen {
+            max-width: 60%;
+            height: auto;
+        }
+
+        #botonIr {
+            background-color: #fff;
+            color: #70a1d2;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #botonIr:hover {
+            background-color: #ffbe78;
+        }
+
+        #textoDebajo {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="imagenContainer">
+        <img id="imagenPequena" src="E.png" alt="Imagen Pequeña">
+        <img id="miImagen" src="b.jpg" alt="Mi Imagen">
+    </div>
+
+    <button id="botonIr" onclick="irAOtraPagina()">Comenzar</button>
+    <p id="textoDebajo">Programa realizado por Diego Guevara 0901-22-1312.</p>
+
+    <script>
+        function irAOtraPagina() {
+            window.location.href = "inicio_y_registrar.html";
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+

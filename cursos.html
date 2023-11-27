@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de fotografía</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001f3f; 
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: white; 
+        }
+
+        h1 {
+            color: #ffffff; 
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #ffffff; 
+            color: #ff8c00; 
+            padding: 15px 60px; 
+            font-size: 16px;
+            font-family: "Arial Black", Arial, sans-serif; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.orange {
+            background-color: #ff8c00; 
+            color: #ffffff; 
+            padding: 15px 60px; 
+            font-size: 16px;
+            font-family: "Arial Black", Arial, sans-serif; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0a1220; 
+        }
+
+        button.orange:hover {
+            background-color: #cc7000; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Curso de fotografía</h1>
+
+    <ul>
+        <li><button onclick="irAPagina('v1.html')">Clase 01</button></li>
+        <li><button onclick="irAPagina('v2.html')">Clase 02</button></li>
+        <li><button onclick="irAPagina('v3.html')">Clase 03</button></li>
+        <li><button onclick="irAPagina('v4.html')">Clase 04</button></li>
+        <li><button onclick="irAPagina('v5.html')">Clase 05</button></li>
+        <li><button onclick="irAPagina('v6.html')">Clase 06</button></li>
+        <li><button onclick="irAPagina('v7.html')">Clase 07</button></li>
+        <li><button onclick="irAPagina('v8.html')">Clase 08</button></li>
+        <li><button onclick="irAPagina('v9.html')">Clase 09</button></li>
+        <li><button onclick="irAPagina('v10.html')">Clase 10</button></li>
+        <li><button onclick="irAPagina('v11.html')">Clase 11</button></li>
+        <li><button onclick="irAPagina('v12.html')">Clase 12</button></li>
+        <li><button class="orange" onclick="irAPagina('questionario.html')">Questionario</button></li>
+    </ul>
+
+    <script>
+        function irAPagina(url) {
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+

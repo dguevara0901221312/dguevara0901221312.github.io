@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión y Registro</title>
+    <style>
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background-color: #001f3f; /* Azul oscuro */
+            color: #000000; /* Texto negro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            background-color: #ffffff; /* Blanco */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        .btn-success {
+            background-color: #3498db; /* Verde */
+            color: #ffffff; /* Texto blanco */
+        }
+        .btn-primary {
+            background-color: #3498db; /* Azul claro */
+            color: #ffffff; /* Texto blanco */
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Iniciar sesión</h2>
+        <form id="loginForm">
+            <div>
+                <label for="loginUsername">Cuenta:</label>
+                <input type="text" id="loginUsername" required>
+            </div>
+            <div>
+                <label for="loginPassword">Contraseña:</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="button" class="btn-success" onclick="login()">Iniciar sesión</button>
+        </form>
+
+        <h2>Crear cuenta</h2>
+        <form id="registerForm">
+            <div>
+                <label for="registerUsername">Nombre de la cuenta:</label>
+                <input type="text" id="registerUsername" required>
+            </div>
+            <div>
+                <label for="registerPassword">Contraseña asignar:</label>
+                <input type="password" id="registerPassword" required>
+            </div>
+            <button type="button" class="btn-primary" onclick="register()">Registrar</button>
+        </form>
+    </div>
+
+    <script>
+        let users = [];
+
+        function login() {
+            let username = document.getElementById("loginUsername").value;
+            let password = document.getElementById("loginPassword").value;
+
+            let user = users.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                alert("El Inicio de sesión se ha completado.");
+                window.location.href = "cursos.html";
+            } else {
+                alert("Nombre del usuario o contraseña puede que sean incorrectos.");
+            }
+        }
+
+        function register() {
+            let username = document.getElementById("registerUsername").value;
+            let password = document.getElementById("registerPassword").value;
+
+            let existingUser = users.find(u => u.username === username);
+
+            if (existingUser) {
+                alert("Este nombre de usuario ya existe.");
+            } else {
+                users.push({ username, password });
+                alert("El registro ha sido completado.");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
